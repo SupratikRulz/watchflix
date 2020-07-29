@@ -1,5 +1,9 @@
+const autoprefixer = require('autoprefixer')
 const dotenv = require('dotenv')
 const path = require('path')
+const postCssDiscardDuplicates = require('postcss-discard-duplicates')
+const postCssFlexbugsFixes = require('postcss-flexbugs-fixes')
+const postCssFocus = require('postcss-focus')
 
 dotenv.config({
   path: `./.env.${process.env.NODE_ENV}`,
@@ -18,6 +22,20 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+        postCssPlugins: [
+          autoprefixer(),
+          postCssDiscardDuplicates(),
+          postCssFlexbugsFixes(),
+          postCssFocus(),
+        ],
       },
     },
     {
