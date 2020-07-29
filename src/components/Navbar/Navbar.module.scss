@@ -1,0 +1,20 @@
+.Navbar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+
+  &__dark {
+    background-color: #141414;
+    transition: background-color 400ms ease;
+  }
+
+  &__logo {
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 0;
+  }
+}
