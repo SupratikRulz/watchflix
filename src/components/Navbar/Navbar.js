@@ -1,7 +1,10 @@
 import classNames from 'classnames'
+import { navigate } from 'gatsby'
 import React, {useEffect, useState} from 'react'
 
 import Button from 'components/Button'
+
+import paths from 'constants/paths'
 
 import Logo from 'images/watchflix-logo.png'
 import styles from './Navbar.module.scss'
@@ -23,10 +26,14 @@ export default function Navbar() {
     }
   }
 
+  function navigateToSignIn() {
+    navigate(paths.SIGN_IN)
+  }
+
   return (
     <nav className={classNames(styles.Navbar, show && styles.Navbar__dark)}>
       <img src={Logo} className={styles.Navbar__logo}/>
-      <Button text="Sign In" type="primary" />
+      <Button text="Sign In" type="primary" onClick={navigateToSignIn}/>
     </nav>
   )
 }
