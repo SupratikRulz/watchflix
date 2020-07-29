@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <nav className={classNames(styles.Navbar, show && styles.Navbar__dark)}>
       <img src={Logo} className={styles.Navbar__logo}/>
-      <Button text="Sign In" type="primary" onClick={navigateToSignIn}/>
+      <Button text="Sign In" type="primary" onClick={navigateToSignIn} className={styles.Button__SignIn}/>
     </nav>
   )
 }
