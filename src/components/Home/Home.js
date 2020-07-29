@@ -2,14 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 import paths from 'constants/paths'
 
-import Navbar from 'components/Navbar'
+import Layout from 'components/Layout'
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <p>Home</p>
       <Link to={paths.SIGN_IN} >Sign In</Link>
-    </>
+    </Layout>
   )
 }
