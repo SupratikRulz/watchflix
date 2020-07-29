@@ -1,12 +1,3 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import paths from 'constants/paths'
+import Home from './Home'
 
-export default function index() {
-  return (
-    <div>
-      <p>Home</p>
-      <Link to={paths.SIGN_IN} >Sign In</Link>
-    </div>
-  )
-}
+export default Home
