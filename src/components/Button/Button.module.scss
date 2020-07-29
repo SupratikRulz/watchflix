@@ -1,0 +1,18 @@
+.Button {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  border-radius: 4px;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__primary {
+    background-color: #e50914 !important;
+    color: #ffffff;
+  }
+}
