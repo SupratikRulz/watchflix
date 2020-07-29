@@ -1,10 +1,9 @@
 const dotenv = require('dotenv')
+const path = require('path')
 
 dotenv.config({
   path: `./.env.${process.env.NODE_ENV}`,
 })
-
-console.log(process.env.NODE_ENV)
 
 module.exports = {
   siteMetadata: {
@@ -19,6 +18,21 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        components: path.join(__dirname, 'src/components'),
+        constants: path.join(__dirname, 'src/constants'),
+        contexts: path.join(__dirname, 'src/contexts'),
+        'data-class': path.join(__dirname, 'src/data-class'),
+        images: path.join(__dirname, 'src/images'),
+        libs: path.join(__dirname, 'src/libs'),
+        pages: path.join(__dirname, 'src/pages'),
+        services: path.join(__dirname, 'src/services'),
+        styles: path.join(__dirname, 'src/styles'),
+        templates: path.join(__dirname, 'src/templates'),
       },
     },
     `gatsby-transformer-sharp`,

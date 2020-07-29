@@ -1,19 +1,42 @@
 import React from "react"
+import { Router } from '@reach/router'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Dashboard from 'components/Dashboard'
+import Home from 'components/Home'
+import Register from 'components/Register'
+import Route from 'components/Route'
+import RoutePrivate from 'components/RoutePrivate'
+import SignIn from 'components/SignIn'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-  </Layout>
-)
+import paths from 'constants/paths'
 
-export default IndexPage
+import firebase from 'services/firebase'
+import { navigate } from "gatsby"
+
+
+function Index() {
+  const [firebaseInitialized, setFirebaseInitialized] = React.useState(false)
+  const name = firebase.getCurrentUsername()
+
+	React.useEffect(() => {
+		firebase.isInitialized().then(val => {
+			setFirebaseInitialized(val)
+    })
+  }, [])
+  
+  if (name) {
+    navigate(paths.DASHBOARD)
+    return null
+  }
+
+  return firebaseInitialized !== false && (
+    <Router>
+      <RoutePrivate path={paths.DASHBOARD} component={Dashboard} default />
+      <Route path={paths.SIGN_IN} component={SignIn} />
+      <Route path={paths.REGISTER} component={Register} />
+      <Route path={paths.HOME} component={Home} />
+    </Router>
+  )
+}
+
+export default Index
