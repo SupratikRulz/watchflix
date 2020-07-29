@@ -9,12 +9,10 @@ export default function Layout({ children }) {
   return (
     <div>
       <Navbar />
-      <div style={{padding: '0 12px'}}>
-        {
-          children
-        }
-        <Footer />
-      </div>
+      {
+        children
+      }
+      <Footer />
     </div>
   )
 }
