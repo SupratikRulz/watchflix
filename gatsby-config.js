@@ -5,9 +5,11 @@ const postCssDiscardDuplicates = require('postcss-discard-duplicates')
 const postCssFlexbugsFixes = require('postcss-flexbugs-fixes')
 const postCssFocus = require('postcss-focus')
 
-dotenv.config({
-  path: `./.env.${process.env.NODE_ENV}`,
-})
+if (process.env.NODE_ENV === 'development') {
+  dotenv.config({
+    path: `./.env.${process.env.NODE_ENV}`,
+  })
+}
 
 module.exports = {
   siteMetadata: {
