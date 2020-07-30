@@ -19,7 +19,7 @@ export default function Navbar() {
   }, [])
 
   function showBackground() {
-    if (window.scrollY > 64) {
+    if (window.scrollY > 100) {
       setShow(true)
     } else {
       setShow(false)
