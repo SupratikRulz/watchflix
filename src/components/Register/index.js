@@ -4,12 +4,12 @@ import React from 'react'
 import firebase from 'services/firebase'
 import paths from 'constants/paths'
 
-export default function Register() {
-  const [email, setEmail] = React.useState('')
+export default function Register(props) {
+  const [email, setEmail] = React.useState(props.email || '')
   const [password, setPassword] = React.useState('')
   const [name, setName] = React.useState('')
 
-
+  console.log(email)
   function onRegister(e) {
     e.preventDefault()
     firebase.register(name, email, password)

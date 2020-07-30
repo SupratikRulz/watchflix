@@ -1,4 +1,5 @@
 import { navigate } from 'gatsby'
+import qs from 'qs'
 import React from 'react'
 
 import Register from 'components/Register'
@@ -14,11 +15,15 @@ export default function RegisterPage() {
 			setFirebaseInitialized(val)
     }).then(() => {
       if (firebase.getCurrentUsername()) {
+        console.log('here')
         navigate(paths.DASHBOARD)
         return null
       }
     })
   }, [])
 
-  return firebaseInitialized !== false && <Register />
+  const queryString = qs.parse((typeof window !== 'undefined' && window.location.search) || '', { ignoreQueryPrefix: true })
+  const { email } = queryString
+
+  return firebaseInitialized !== false && <Register email={email} />
 }
