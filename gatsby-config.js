@@ -41,6 +41,18 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-create-client-paths',
+      options: {
+        prefixes: [
+          '/',
+          '/sign-in/',
+          '/register/',
+          '/dashboard/',
+          '/404/'
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         components: path.join(__dirname, 'src/components'),
