@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Banner from 'components/Banner'
+import Faq from 'components/Faq'
 import Divider from 'components/Divider'
 import Layout from 'components/Layout'
 import {
@@ -33,6 +34,8 @@ export default function Home() {
         subcaption="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
         storyElement={<DevicePile />}
       />
+      <Divider />
+      <Faq />
       <Divider />
     </Layout>
   )

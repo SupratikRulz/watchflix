@@ -1,0 +1,84 @@
+.Faq {
+  width: 100%;
+  padding: 50px 5%;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+
+  ul {
+    padding: 0;
+    margin: 1.25em auto;
+    max-width: 815px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 50px 0;
+  }
+}
+
+
+.FaqCards {
+  &__container {
+    list-style: none;
+    list-style-type: none;
+  }
+
+  &__heading {
+    position: relative;
+    font-size: 26px;
+    color: #ffffff;
+    background-color: #303030;
+    border: none;
+    width: 100%;
+    max-width: 815px;
+    padding: .8em 1.2em .8em 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    text-align: left;
+
+    &:focus {
+      outline: none;
+    }
+
+    @media screen and (max-width: 450px) {
+      font-size: 16px;
+    }
+  }
+
+  &__description {
+    color: #ffffff;
+    background-color: #303030;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s cubic-bezier(.5,0,.1,1);
+
+    &_show {
+      max-height: 1200px;
+      transition: max-height .25s cubic-bezier(.5,0,.1,1);
+
+      span {
+        padding: .8em 1.2em .8em 1.2em;
+        font-size: 20px;
+        display: inline-block;
+        text-align: left;
+
+        @media screen and (max-width: 360px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__Cross {
+    position: absolute;
+    right: 12px;
+    transform-origin: center center;
+    transition: all 100ms ease;
+  }
+
+  &__rotate{
+    transform: rotate(-45deg);
+  }
+}
