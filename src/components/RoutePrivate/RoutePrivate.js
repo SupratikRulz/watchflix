@@ -44,7 +44,9 @@ export default function RoutePrivate({ path, fullPath, ...props }) {
   if (firebase.getCurrentUsername()) {
     return <Route {...props} />
   } else {
-    navigate(`${paths.SIGN_IN}?${qs.stringify({ redirect: `${fullPath || path}${queryString}` })}`)
+    if (typeof window !== 'undefined') {
+      navigate(`${paths.SIGN_IN}?${qs.stringify({ redirect: `${fullPath || path}${queryString}` })}`)
+    }
   }
   return null
 }

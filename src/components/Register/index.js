@@ -9,7 +9,6 @@ export default function Register(props) {
   const [password, setPassword] = React.useState('')
   const [name, setName] = React.useState('')
 
-  console.log(email)
   function onRegister(e) {
     e.preventDefault()
     firebase.register(name, email, password)

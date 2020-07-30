@@ -47,5 +47,23 @@ class Firebase {
 	}
 }
 
+let instance
+
+function getFirebase() {
+  if (typeof window !== 'undefined') {
+    if (instance) return instance;
+    instance = new Firebase();
+    return instance;
+  }
+
+  return {
+		login() {},
+		logout() {},
+		register() {},
+		isInitialized() {},
+		getCurrentUsername() {}
+	};
+}
+
 // Create a singleton for firebase
-export default new Firebase()
+export default getFirebase()

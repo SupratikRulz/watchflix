@@ -25,7 +25,9 @@ function Index() {
   }, [])
   
   if (name) {
-    navigate(paths.DASHBOARD)
+    if (typeof window !== 'undefined') {
+      navigate(paths.DASHBOARD)
+    }
     return null
   }
 
