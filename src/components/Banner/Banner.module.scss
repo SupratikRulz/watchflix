@@ -11,8 +11,6 @@
     height: 70vh;
     width: 100% !important;
 
-
-
     &__container {
       position: relative;
       height: 70vh;
@@ -78,7 +76,7 @@
         top: -70vh;
       }
 
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 380px) {
         top: -100vh;
       }
     }
