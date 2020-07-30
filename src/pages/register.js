@@ -15,7 +15,6 @@ export default function RegisterPage() {
 			setFirebaseInitialized(val)
     }).then(() => {
       if (firebase.getCurrentUsername()) {
-        console.log('here')
         navigate(paths.DASHBOARD)
         return null
       }

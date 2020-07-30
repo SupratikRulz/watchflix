@@ -17,8 +17,10 @@ const firebaseConfig = {
 
 class Firebase {
   constructor() {
-    app.initializeApp(firebaseConfig)
-    this.auth = app.auth()
+		if (typeof window !== 'undefined') {
+			app.initializeApp(firebaseConfig)
+			this.auth = app.auth()
+		}
   }
 
   login(email, password) {
@@ -47,23 +49,5 @@ class Firebase {
 	}
 }
 
-let instance
-
-function getFirebase() {
-  if (typeof window !== 'undefined') {
-    if (instance) return instance;
-    instance = new Firebase();
-    return instance;
-  }
-
-  return {
-		login() {},
-		logout() {},
-		register() {},
-		isInitialized() {},
-		getCurrentUsername() {}
-	};
-}
-
 // Create a singleton for firebase
-export default getFirebase()
+export default new Firebase()

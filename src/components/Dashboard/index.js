@@ -4,7 +4,7 @@ import firebase from 'services/firebase'
 import paths from 'constants/paths'
 
 export default function index() {
-  const name = firebase.getCurrentUsername()
+  const name = typeof window !== 'undefined' && firebase.getCurrentUsername()
 
   function onLogout(e) {
     e.preventDefault()
