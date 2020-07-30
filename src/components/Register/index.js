@@ -11,7 +11,7 @@ export default function Register(props) {
 
   function onRegister(e) {
     e.preventDefault()
-    firebase.register(name, email, password)
+    firebase().register(name, email, password)
     .then(() => {
       navigate(paths.DASHBOARD)
     })

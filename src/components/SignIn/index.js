@@ -10,7 +10,7 @@ export default function SignIn() {
 
   function onLogin(e) {
     e.preventDefault()
-    firebase.login(email, password)
+    firebase().login(email, password)
       .then(() => {
         navigate(paths.DASHBOARD)
       })

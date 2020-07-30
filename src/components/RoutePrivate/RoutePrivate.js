@@ -41,7 +41,7 @@ import paths from 'constants/paths'
 export default function RoutePrivate({ path, fullPath, ...props }) {
   const queryString = (typeof window !== 'undefined' && window.location.search) || ''
 
-  if (typeof window !== 'undefined' && firebase.getCurrentUsername()) {
+  if (typeof window !== 'undefined' && firebase().getCurrentUsername()) {
     return <Route {...props} />
   } else {
     if (typeof window !== 'undefined') {

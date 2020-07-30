@@ -11,10 +11,10 @@ export default function RegisterPage() {
   const [firebaseInitialized, setFirebaseInitialized] = React.useState(false)
 
 	React.useEffect(() => {
-		firebase.isInitialized().then(val => {
+		firebase().isInitialized().then(val => {
 			setFirebaseInitialized(val)
     }).then(() => {
-      if (firebase.getCurrentUsername()) {
+      if (firebase().getCurrentUsername()) {
         navigate(paths.DASHBOARD)
         return null
       }

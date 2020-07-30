@@ -16,10 +16,10 @@ import { navigate } from "gatsby"
 
 function Index() {
   const [firebaseInitialized, setFirebaseInitialized] = React.useState(false)
-  const name = typeof window !== 'undefined' && firebase.getCurrentUsername()
+  const name = typeof window !== 'undefined' && firebase().getCurrentUsername()
 
 	React.useEffect(() => {
-		firebase.isInitialized().then(val => {
+		firebase().isInitialized().then(val => {
 			setFirebaseInitialized(val)
     })
   }, [])
