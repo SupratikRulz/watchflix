@@ -9,8 +9,8 @@ export default function Footer() {
       textAlign: 'center',
       color: '#ffffff',
       backgroundColor: '#e50914',
-      position: 'fixed',
-      top: 'calc(100% - 10px)',
+      position: 'relative',
+      // top: 'calc(100% - 10px)',
       zIndex: '3',
       height: '10px'
 
