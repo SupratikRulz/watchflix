@@ -1,0 +1,52 @@
+.Reels {
+  position: relative;
+  color: #ffffff;
+  margin: 32px 16px;
+  min-height: 240px;
+
+  &_xl {
+    min-height: 500px;
+  }
+
+  &_title {
+    position: absolute;
+  }
+
+  &__poster {
+    z-index: 2;
+    height: 170px;
+    object-fit: contain;
+    transition: all 400ms ease;
+    margin-right: 4px;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-35px);
+      height: 240px;
+      // transform: scale(1.1);
+    }
+
+    &_xl {
+      height: 460px !important;
+
+      &:hover {
+        transform: translateY(-20px);
+        height: 500px !important;
+        // transform: scale(1.1);
+      }
+    }
+
+    &_container {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      padding: 35px 0;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
