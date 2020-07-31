@@ -19,25 +19,20 @@ export default function HTML(props) {
           key={`loader`}
           id="___loader"
           style={{
-            alignItems: "center",
             backgroundColor: "#000000",
             color: '#ffffff',
             display: "flex",
             justifyContent: "center",
+            alignItems: "center",
             flexDirection: 'column',
             position: "absolute",
-            left: 0,
-            top: 0,
-            right: 0,
-            bottom: 0,
             zIndex: 100,
             width: '100vw',
             height: '100vh',
-            position: 'absolute',
           }}
         >
           <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-          width="80%" height="auto" viewBox="0 0 558.000000 140.000000"
+          width="80%" height="20%" viewBox="0 0 558.000000 140.000000"
           preserveAspectRatio="xMidYMid meet">
           <g transform="translate(0.000000,140.000000) scale(0.100000,-0.100000)"
           fill="#e50914" stroke="none">
@@ -135,7 +130,7 @@ export default function HTML(props) {
           -266z"/>
           </g>
           </svg>
-          <p style={{fontSize: '20px'}}>By Supratik Basu</p>
+          <p style={{fontSize: '1rem'}}>By Supratik Basu</p>
         </div>
         <div
           key={`body`}

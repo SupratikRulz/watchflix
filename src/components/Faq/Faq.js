@@ -42,7 +42,7 @@ export default function Faq() {
       <div>
         <ul>
           {
-            FAQs.map((faq, index) => <li className={styles.FaqCards__container}><FaqCards {...faq} key={index} id={index} show={activeFaqId === index} toggleShowHide={toggleShowHide}/></li>)
+            FAQs.map((faq, index) => <li className={styles.FaqCards__container} key={index}><FaqCards {...faq} key={index} id={index} show={activeFaqId === index} toggleShowHide={toggleShowHide}/></li>)
           }
         </ul>
       </div>
