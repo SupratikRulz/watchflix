@@ -59,6 +59,7 @@ module.exports = {
         constants: path.join(__dirname, 'src/constants'),
         contexts: path.join(__dirname, 'src/contexts'),
         'data-class': path.join(__dirname, 'src/data-class'),
+        hooks: path.join(__dirname, 'src/hooks'),
         images: path.join(__dirname, 'src/images'),
         libs: path.join(__dirname, 'src/libs'),
         pages: path.join(__dirname, 'src/pages'),
