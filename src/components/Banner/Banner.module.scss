@@ -4,8 +4,11 @@
 
   @media screen and (max-width: 768px) {
     height: 85vh;
-    min-height: 530px;
     background: rgba(0, 0, 0, 1);
+  }
+
+  @media screen and (max-width: 768px) and (max-height: 360px) {
+    min-height: 600px;
   }
 
   &__image {
