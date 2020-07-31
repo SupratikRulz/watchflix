@@ -14,7 +14,7 @@ const firebaseConfig = {
   measurementId: process.env.measurementId,
 }
 
-
+console.log(firebaseConfig)
 class Firebase {
   constructor() {
 		if (typeof window !== 'undefined') {
