@@ -7,7 +7,7 @@ import 'styles/index.scss'
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div style={{minHeight: 'calc(100vh - 10px)'}}>
       <Navbar />
       {
         children

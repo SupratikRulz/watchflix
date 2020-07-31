@@ -4,6 +4,8 @@
 
   @media screen and (max-width: 768px) {
     height: 85vh;
+    min-height: 530px;
+    background: rgba(0, 0, 0, 1);
   }
 
   &__image {
